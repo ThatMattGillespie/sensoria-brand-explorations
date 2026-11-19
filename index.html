@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sensoria brand exploration</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Funnel+Sans:wght@300..800&family=Fragment+Mono&display=swap">
+  <style>
+    :root { --ground: #F2ECE2; --ink: #05272B; --ink-2: #4C6466; --line: rgba(5,39,43,.14); }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--ground); color: var(--ink); }
+    body { font: 17px/1.55 'Funnel Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 72px 48px 96px; }
+    .kicker { font: 12px 'Fragment Mono', ui-monospace, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+    h1 { font: 400 56px/1 'Funnel Display', system-ui, sans-serif; letter-spacing: -.035em; margin: 14px 0 20px; }
+    p.intro { max-width: 60ch; color: var(--ink-2); }
+    .rounds { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    a.card { display: flex; flex-direction: column; gap: 10px; padding: 28px; background: #FEFEFE; border: 1px solid var(--line); border-radius: 10px; color: inherit; text-decoration: none; transition: border-color .15s, transform .15s; }
+    a.card:hover { border-color: var(--ink); transform: translateY(-2px); }
+    a.card:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    .card h2 { font: 400 32px/1.05 'Funnel Display', system-ui, sans-serif; letter-spacing: -.02em; }
+    .card p { font-size: 15px; color: var(--ink-2); }
+    .go { margin-top: auto; font-weight: 600; font-size: 15px; }
+    .note { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-2); max-width: 70ch; }
+    .sp { display: grid; grid-template-columns: repeat(7, 1fr); height: 10px; border-radius: 3px; overflow: hidden; margin-top: 28px; max-width: 420px; }
+    @media (max-width: 720px) { .wrap { padding: 40px 16px 64px; } h1 { font-size: 38px; } .rounds { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="kicker">Sensoria Research · work in progress · not for sharing outside the team</p>
+    <h1>Brand exploration</h1>
+    <p class="intro">Explorations toward an updated Sensoria Research identity: a warm off-white with spectrum accents, a new display face, and ways of treating images across the website, Instagram carousels and video. Each option shows the same landing page, two carousel slides and a strip of video frames.</p>
+    <div class="sp"><i style="background:#437EB9"></i><i style="background:#008E8E"></i><i style="background:#98741A"></i><i style="background:#AE653A"></i><i style="background:#4D8B50"></i><i style="background:#8A68AE"></i><i style="background:#B25E59"></i></div>
+    <div class="rounds">
+      <a class="card" href="round-2/"><span class="kicker">Round 2 · current</span><h2>Refract teal, six ways to treat images</h2><p>Sensoria’s current teal, amber and turquoise on warm paper, with a new seven-hue spectrum. Six image treatments, from prints and cut-outs to ligne claire and colour photography.</p><span class="go">Open round 2 →</span></a>
+      <a class="card" href="round-1/"><span class="kicker">Round 1 · broad</span><h2>Ten lenses on a prism</h2><p>The first, wide exploration: risograph, chromatic aberration, soft focus, colour blending and more. Refract teal was chosen from here.</p><span class="go">Open round 1 →</span></a>
+    </div>
+    <p class="note">Move the cursor over headlines to see type effects. Use the bar at the top of each page or the ← → keys to move between options. Display type is a free stand-in for the licensed fonts under consideration, and the logo is a placeholder.</p>
+  </main>
+</body>
+</html>

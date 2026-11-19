@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sensoria round 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Funnel+Sans:wght@300..800&family=Fragment+Mono&display=swap">
+  <style>
+    :root { --ground: #F2ECE2; --ink: #05272B; --ink-2: #4C6466; --line: rgba(5,39,43,.14); }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--ground); color: var(--ink); }
+    body { font: 16px/1.5 'Funnel Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 64px 48px 96px; }
+    .kicker { font: 12px 'Fragment Mono', ui-monospace, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+    h1 { font: 400 48px/1.02 'Funnel Display', system-ui, sans-serif; letter-spacing: -.03em; margin: 12px 0 18px; }
+    .intro { max-width: 66ch; color: var(--ink-2); }
+    .intro p + p { margin-top: .6em; }
+    .changes { list-style: none; margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1000px; }
+    .changes li { border-top: 1px solid var(--line); padding-top: 12px; font-size: 15px; }
+    .changes b { display: block; font: 11px 'Fragment Mono', monospace; letter-spacing: .12em; text-transform: uppercase; font-weight: 400; margin-bottom: 4px; }
+    .sp { display: grid; grid-template-columns: repeat(7, 1fr); height: 12px; border-radius: 3px; overflow: hidden; margin-top: 8px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-top: 48px; }
+    .card { display: flex; flex-direction: column; gap: 12px; padding: 24px; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: inherit; background: #FEFEFE; transition: border-color .15s, transform .15s; }
+    .card:hover { border-color: var(--ink); transform: translateY(-2px); }
+    .card:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    .card h2 { font: 400 28px/1.05 'Funnel Display', system-ui, sans-serif; letter-spacing: -.02em; }
+    .card p { font-size: 15px; color: var(--ink-2); }
+    .go { font-size: 14px; font-weight: 600; margin-top: auto; }
+    @media (max-width: 760px) { .wrap { padding: 40px 16px 64px; } h1 { font-size: 34px; } .changes, .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="kicker">Sensoria Research · brand exploration · round 2</p>
+    <h1>Refract teal, six ways<br>to treat images</h1>
+    <div class="intro">
+      <p>Everything from Refract teal stays: warm paper and white surfaces, deep teal ink, amber and turquoise accents, Funnel Display (“Refract”) with the faint turquoise and amber fringe. The options differ only in how images are treated. D, E and F build on A.</p>
+    </div>
+    <ul class="changes">
+      <li><b>New: full spectrum</b>Seven hues at one lightness and chroma, so none outshouts the core teal and amber. A darker set for paper, a light set for deep teal.
+        <div class="sp" id="sp1"></div><div class="sp" id="sp2" style="background:#05272B;padding:3px;gap:3px;height:18px"></div></li>
+      <li><b>Lighter speaker frame</b>Speakers stay in natural colour with only a light matte grade and a soft vignette. The old duotone filter is gone.</li>
+      <li><b>Real imagery</b>Sensoria’s event photos, the website illustrations, the nihonga brain and the Jeremy cut-out replace round 1’s stand-ins.</li>
+    </ul>
+    <div class="grid" id="grid"></div>
+  </main>
+  <script>window.DIRECTIONS = [];</script>
+  <script src="directions/base.js"></script>
+  <script src="directions/prints.js"></script>
+  <script src="directions/ligne-claire.js"></script>
+  <script src="directions/colour-photo.js"></script>
+  <script src="directions/prints-plus.js"></script>
+  <script src="directions/prints-mixed.js"></script>
+  <script src="directions/prints-marked.js"></script>
+  <script>
+    const R = window.REFRACT;
+    document.getElementById('sp1').innerHTML = R.SPECTRUM.map((c) => `<i style="background:${c}"></i>`).join('');
+    document.getElementById('sp2').innerHTML = R.SPECTRUM_LIGHT.map((c) => `<i style="background:${c};border-radius:2px"></i>`).join('');
+    document.getElementById('grid').innerHTML = window.DIRECTIONS.map((d) => `
+      <a class="card" href="page.html?d=${d.id}">
+        <span class="kicker">${d.lens}</span>
+        <h2>${d.name}</h2>
+        <p>${d.idea}</p>
+        <span class="go">Open option →</span>
+      </a>`).join('');
+  </script>
+</body>
+</html>
