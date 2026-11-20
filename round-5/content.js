@@ -65,6 +65,7 @@
 
   // render the chosen layout
   window.addEventListener('DOMContentLoaded', () => {
+    if (!document.getElementById('app')) return; // index pages list the options only
     const list = window.LAYOUTS;
     const params = new URLSearchParams(location.search);
     let idx = list.findIndex((d) => d.id === params.get('d'));
